@@ -1,8 +1,9 @@
 ﻿using TuWpf.Model;
+using TuWpf.Others;
 
 namespace TuWpf.ViewModel
 {
-    class UserViewModel
+    public class UserViewModel
     {
         private User _user;
         public UserViewModel(User user)
@@ -28,7 +29,7 @@ namespace TuWpf.ViewModel
             set { _user.Email = value; }
         }
 
-        public string Role
+        public UserRolesEnum Role
         {
             get => _user.Role;
             set { _user.Role = value; }

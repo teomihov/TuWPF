@@ -7,11 +7,11 @@ namespace TuWpf.View
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    internal partial class MainWindow : Window
+    public partial class MainWindow : Window
     {
         private UserViewModel _userViewModel;
 
-        internal MainWindow(UserViewModel userViewModel)
+        public MainWindow(UserViewModel userViewModel)
         {
             _userViewModel = userViewModel;
             InitializeComponent();

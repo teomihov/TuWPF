@@ -22,7 +22,6 @@ namespace TuWpf
                 FailedLoginAttempts = 2,
                 Names = "Test User",
                 Password = "pass",
-                Role = "admin"
             };
             var userViewModel = new UserViewModel(user);
             var mainWindow = new MainWindow(userViewModel);
