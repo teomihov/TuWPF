@@ -16,17 +16,20 @@ namespace TuWpf
         {
             base.OnStartup(e);
 
+            var userRepository = new UserRepository();
+
             var user = new User
             {
                 Email = "test@test.bg",
                 FailedLoginAttempts = 2,
-                Names = "Test User",
-                Password = "pass",
+                Names = "test",
+                Password = "test",
             };
-            var userViewModel = new UserViewModel(user);
-            var mainWindow = new MainWindow(userViewModel);
-            mainWindow.DisplayUserInfo();
-            mainWindow.Show();
+            userRepository.AddUser(user);
+
+            var loginViewModel = new LoginViewModel(userRepository);
+            var loginWindow = new LoginWindow(loginViewModel);
+            loginWindow.Show();
         }
     }
 }
