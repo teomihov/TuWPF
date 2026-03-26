@@ -16,16 +16,8 @@ namespace TuWpf
         {
             base.OnStartup(e);
 
-            var userRepository = new UserRepository();
-
-            var user = new User
-            {
-                Email = "test@test.bg",
-                FailedLoginAttempts = 2,
-                Names = "test",
-                Password = "test",
-            };
-            userRepository.AddUser(user);
+            var userRepository = new UserRepositoryDb();
+            userRepository.CreateDatabase();
 
             var loginViewModel = new LoginViewModel(userRepository);
             var loginWindow = new LoginWindow(loginViewModel);

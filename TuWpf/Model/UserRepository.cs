@@ -5,7 +5,7 @@ namespace TuWpf.Model
     public class UserRepository
     {
         private int _nextId;
-        private List<User> _users { get; set; }
+        protected IEnumerable<User> _users { get; set; }
 
         public UserRepository()
         {
@@ -13,18 +13,18 @@ namespace TuWpf.Model
             _users = new List<User>();
         }
 
-        public void AddUser(User user)
+        public virtual void AddUser(User user)
         {
             user.Id = _nextId++;
-            _users.Add(user);
+            _users.Append(user);
         }
 
-        public void DeleteUser(int id)
+        public virtual void DeleteUser(int id)
         {
-            var userIndex = _users.FindIndex(u => u.Id == id);
-            if (userIndex != -1)
+            var user = _users.FirstOrDefault(u => u.Id == id);
+            if (user != null)
             {
-                _users.RemoveAt(userIndex);
+                _users = _users.Where(user => user.Id != id);
             }
         }
 

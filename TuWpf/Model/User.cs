@@ -8,7 +8,7 @@ namespace TuWpf.Model
         public DateTime Expires { get; set; }
         public string Names { get; set; }
         public string Password { get; set; }
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
         public UserRolesEnum Role { get; set; }
         public int FailedLoginAttempts { get; set; }
 

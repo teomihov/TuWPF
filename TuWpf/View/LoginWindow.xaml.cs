@@ -32,6 +32,14 @@ namespace TuWpf.View
             _loginViewModel.PasswordText = textBoxPassword.Text;
             var result = _loginViewModel.LoginExecute();
 
+            if (result == "Login successful!")
+            {
+
+                var adminWindow = new AdminWindow(_loginViewModel.UserRepository);
+                adminWindow.Show();
+                return;
+            }
+
             MessageBox.Show(result);
         }
     }

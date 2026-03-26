@@ -8,10 +8,10 @@
         Title="LoginWindow" Height="450" Width="800">
     <Grid>
         <Label Content="Потребителско име:" HorizontalAlignment="Left" Margin="166,161,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBoxUserName" HorizontalAlignment="Left" Margin="298,165,0,0" TextWrapping="Wrap" Text="Потребителско име" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxUserName" HorizontalAlignment="Left" Margin="298,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
 
         <Label Content="Парола:" HorizontalAlignment="Left" Margin="234,197,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBoxPassword" HorizontalAlignment="Left" Margin="298,205,0,0" TextWrapping="Wrap" Text="Парола" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxPassword" HorizontalAlignment="Left" Margin="298,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="Вход(Login)" HorizontalAlignment="Left" Margin="327,265,0,0" VerticalAlignment="Top" Click="Button_Click" />
 
 

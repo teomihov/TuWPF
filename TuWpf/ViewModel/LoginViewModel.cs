@@ -9,14 +9,15 @@ namespace TuWpf.ViewModel
     public class LoginViewModel
     {
         private UserLoginAttempt _userLoginAttempt;
-        private UserRepository _userRepository;
+        private UserRepositoryDb _userRepository;
 
 
-        public LoginViewModel(UserRepository userRepository)
+        public LoginViewModel(UserRepositoryDb userRepository)
         {
             _userRepository = userRepository;
         }
 
+        public UserRepositoryDb UserRepository => _userRepository;
         public UserLoginAttempt? UserLoginAttempt => _userLoginAttempt;
         public string ErrorMessage => _userLoginAttempt?.ErrorMessage ?? string.Empty;
 
@@ -36,13 +37,6 @@ namespace TuWpf.ViewModel
             {
                 return _userLoginAttempt.ErrorMessage;
             }
-
-            var user = _userLoginAttempt.ExecuteLoginUser();
-            var userViewModel = new UserViewModel(user);
-            var mainWindow = new MainWindow(userViewModel);
-
-            mainWindow.DisplayUserInfo();
-            mainWindow.Show();
 
             return "Login successful!";
         }
